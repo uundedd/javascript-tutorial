@@ -7,13 +7,14 @@ class Display {
     fps,
     renderEvent
   ) {
-    this.Width = width;
-    this.Height = height;
+    this.width = width;
+    this.height = height;
     this.withResolution = withResolution;
     this.heightResolution = heightResolution;
     this.resource = [];
     this.fps = fps;
     this.renderEvent = renderEvent;
+    this.off();
   }
   fillResource(resouce) {
     this.resource = resouce;
@@ -46,37 +47,47 @@ class Display {
     );
   }
   runTestDisplay(){
-   
+    this.onTest = true;
+    this.cycleTestDisplay();
   }
-  makeColorfullDisplay() {
+  cycleTestDisplay(){
+    if (this.onTest){
+    setTimeout(() => {
+        this.makeResourceDisplay(this.makeRandomColor);
+        this.cycleTestDisplay();
+    }, 1000/this.fps);
+    }
+  }
+  makeResourceDisplay(colorpixel) {
     var result = [];
      for (var i = 0; i < this.heightResolution; i++){
       var innerResult = [];
       result.push (innerResult) ;
      for (var j = 0; j < this.withResolution; j++){
-     innerResult.push(makeRandomColor());
+     innerResult.push(colorpixel(i ,j));
      }
-     setTimeout(() => {
-      var k = this.fps;
-      if (k <= 0) {
-        this.makeColorfullDisplay();
-      }
-       k -= k;
-     }, 1000/this.fps);
     } 
     this.resource = result;
   }
-  stopTestDisplay() {}
-  on() {}
-  off() {}
+  stopTestDisplay() {
+    this.onTest = false;
+  }
+  on() {
+    this.makeResourceDisplay( (row , column) => {return "#ffffff"});
+    this.power=true;
+    this.render();
+  }
+  off() {
+    this.makeResourceDisplay(function(row , column) {return "#000000"});
+    this.power = false;
+    this,this.renderEvent(this.resource , this.width , this.height);
+  }
+  render(){
+    if (this.power){
+    setTimeout(() => {
+      this.renderEvent(this.resource , this.width , this.height);
+      this.render();
+    }, 1000/this.fps);
+    }
+  }
 }
-
-[
-  [
-    [],
-    [],
-    []
-  ],
-  [],
-  [],
-]
