@@ -53,11 +53,12 @@ class Display {
      innerResult.push(makeRandomColor());
      }
      setTimeout(() => {
-      if (this.fps <= 0) {
+      var k = this.fps;
+      if (k <= 0) {
         this.makeColorfullDisplay();
       }
-       this.fps -= this.fps;
-     }, 1000);
+       k -= k;
+     }, 1000/this.fps);
     } 
     this.resource = result;
   }
