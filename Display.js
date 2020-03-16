@@ -1,8 +1,12 @@
-setTimeout(() => {
-  run();
-}, 500);
 class Display {
-  constructor(width, height, withResolution , heightResolution, fps , renderEvent) {
+  constructor(
+    width,
+    height,
+    withResolution,
+    heightResolution,
+    fps,
+    renderEvent
+  ) {
     this.Width = width;
     this.Height = height;
     this.withResolution = withResolution;
@@ -11,8 +15,8 @@ class Display {
     this.fps = fps;
     this.renderEvent = renderEvent;
   }
-  fillResource(resouce){
-      this.resource  = resouce;
+  fillResource(resouce) {
+    this.resource = resouce;
   }
   makeRandomColor() {
     return (
@@ -62,19 +66,9 @@ class Display {
     } 
     this.resource = result;
   }
-  stopTestDisplay(){
-    this.fps = 0;
-  }
-  on(){
-
-  }
-  off(){
-      
-  }
-}
-function run() {
-  var rasterimage = new Image(1, 1, 100 ,100 ,24 , function(renderedDisplay ,width , height){});    
-  rasterimage.testdisplay();
+  stopTestDisplay() {}
+  on() {}
+  off() {}
 }
 
 [
