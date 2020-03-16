@@ -9,9 +9,11 @@ class Display {
   ) {
     this.Width = width;
     this.Height = height;
-    this.Resolution = resolution;
+    this.withResolution = withResolution;
+    this.heightResolution = heightResolution;
     this.resource = [];
-    // this.colorRandom = colorRandom;
+    this.fps = fps;
+    this.renderEvent = renderEvent;
   }
   fillResource(resouce) {
     this.resource = resouce;
@@ -43,14 +45,37 @@ class Display {
       })("")
     );
   }
-  runTestDisplay() {
+  runTestDisplay(){
+   
+  }
+  makeColorfullDisplay() {
     var result = [];
-    for (var i = 0; i < n; i++) {
-      result.push(new Array(m).colorRandom());
-    }
-    return result;
+     for (var i = 0; i < this.heightResolution; i++){
+      var innerResult = [];
+      result.push (innerResult) ;
+     for (var j = 0; j < this.withResolution; j++){
+     innerResult.push(makeRandomColor());
+     }
+     setTimeout(() => {
+      if (this.fps <= 0) {
+        this.makeColorfullDisplay();
+      }
+       this.fps -= this.fps;
+     }, 1000);
+    } 
+    this.resource = result;
   }
   stopTestDisplay() {}
   on() {}
   off() {}
 }
+
+[
+  [
+    [],
+    [],
+    []
+  ],
+  [],
+  [],
+]
