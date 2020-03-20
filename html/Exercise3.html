@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100, initial-scale=1.0">
+    <title>Exercise3</title>
+</head>
+<body>
+    <h2>Exercise3</h2>
+    <h3 id="lb1">Result</h3>
+    <button onclick="showDate()">Click Me!</button>
+    <br>
+    <button onclick="this.innerHTML=Date()">Click Date!</button>
+    <br>
+    <input type="text" onchange="changeInput(this.value)">
+
+</body>
+<script>
+function showDate() {
+    document.getElementById('lb1').innerHTML=Date();
+}
+function changeInput (value){
+    document.getElementById('lb1').innerHTML=value;
+}
+</script>
+</html>
