@@ -35,6 +35,6 @@ class DisplayToHtml {
   }
 }
 
-var testingDisplay = new Display(20 , 20 , 6 ,6 , 50 , new DisplayToHtml("display"));
+var testingDisplay = new Display(20, 20, 6, 6, 50, new DisplayToHtml("display"));
 testingDisplay.on();
 testingDisplay.runTestDisplay();

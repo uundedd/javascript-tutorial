@@ -1,0 +1,37 @@
+<!-- Write by sa.mirkhalili -->
+<!-- sample for constructor-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100, initial-scale=1.0">
+    <title>Exercise11</title>
+</head>
+
+<body>
+    <h2>Exercise11</h2>
+    <p id="demo"></p>
+</body>
+<script>
+    function Person(name, family, age) {
+        this.name = name;
+        this.family = family;
+        this.age = age;
+        this.fullname = function () {
+            return this.name + " " + this.family;
+        }
+    }
+    var people = [];
+    people.push(new Person("abolfazl", "mirkhalili", "46"));
+    people.push(new Person("javad", "mirkhalili", "3"));
+    people.push(new Person("fatemeh", "mirkhalili", "19"));
+    people.push(new Person("mohamad", "jafari", "23"));
+    people.push(new Person("reza", "moradi", "31"));
+    var text = "";
+    for (x in people) {
+        text += people[x].fullname() + " " + "--> " + " " + people[x].age + "<br>";
+    }
+    document.getElementById('demo').innerHTML = text;
+</script>
+
+</html>

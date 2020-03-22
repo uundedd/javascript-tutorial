@@ -9,20 +9,22 @@ class VectorDisplay extends Display {
         heightResolution,
         fps,
         renderEvent
-    ){
+    ) {
         super(width, height, withResolution, heightResolution, fps, renderEvent);
-        
+
     }
-    makeRasterResoucrFramVector(lines){
-        this.makeResourceDisplay( (row , column) => {return "#ffffff"});
+    makeRasterResoucrFramVector(lines) {
+        this.makeResourceDisplay((row, column) => {
+            return "#ffffff"
+        });
         for (const line of lines) {
-            var previousPoint ; 
-          for (const point of line) {
-            if (previousPoint){  
-                this.makeDrawLine(previousPoint , point);
+            var previousPoint;
+            for (const point of line) {
+                if (previousPoint) {
+                    this.makeDrawLine(previousPoint, point);
+                }
+                previousPoint = point;
             }
-              previousPoint = point ;
-          }  
         }
     }
 }
