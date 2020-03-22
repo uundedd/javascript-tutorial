@@ -1,0 +1,36 @@
+<!-- Write by sa.mirkhalili -->
+<!-- sample for checker-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100, initial-scale=1.0">
+    <title>Exercise10</title>
+</head>
+
+<body>
+    <h2>Exercise10</h2>
+    name : <input type="text" id="fname">
+    <input type="button" value="Submit" onclick="abolfazl()">
+    <p id="demo" style="color: brown"></p>
+    <form action="/sam.html" method="POST">
+        <input type="text2" name="lname" required>
+        <input type="submit" value="sun2">
+    </form>
+</body>
+<script>
+    function abolfazl() {
+        var x, text;
+        x = document.getElementById('fname').value;
+        if (isNaN(x) || x < 1 || x > 10) {
+            text = "Input Not Valid";
+        }
+        else {
+            text = "Input OK.";
+            document.getElementById('demo').style.color = "green";
+        }
+        document.getElementById('demo').innerHTML = text;
+    }
+</script>
+
+</html>
