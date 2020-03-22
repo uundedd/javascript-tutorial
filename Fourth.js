@@ -37,12 +37,10 @@ class Vehicle {
                         if (event.condition(this)) {
                             event.eventListener(this);
                         }
-
                     }
                 }
                 this.moveCycle();
             }, 1000);
-
         } else if (this.fuel <= 0) {
             console.log('vehicle stop because the fuel is empty');
             this.stop('the fuel is run out');
