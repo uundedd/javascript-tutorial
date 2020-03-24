@@ -1,0 +1,39 @@
+<!-- Write by sa.mirkhalili -->
+<!-- sample for Slide Show -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=50, initial-scale=1.0">
+    <title>Exercise14</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h2>Exercise14</h2>
+    <p></p>
+    <img id="slide" src="" alt="">
+</body>
+<script>
+    document.getElementById("slide").src = "pic/p1.png";
+    document.getElementById("slide").style.width = "250px";
+    (function () {
+        var time = 0;
+        var timeid = setInterval(change, 4000);
+        function change() {
+            document.getElementById("slide").src = "pic/p2.png";
+            clearInterval(timeid);
+        }
+        setTimeout(() => {
+            var timeid = setInterval(change2, 3000);
+            function change2() {
+                document.getElementById("slide").src = "pic/p3.png";
+            }
+        }, 3000);
+
+    })();
+</script>
+
+</html>
