@@ -1,16 +1,66 @@
 <!-- Write by sa.mirkhalili -->
-<!-- sample for Move object-->
+<!-- sample for Move object -->
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=50, initial-scale=1.0">
     <title>Exercise13</title>
+    <style>
+        #box1 {
+            width: 400;
+            height: 400;
+            position: relative;
+            background-color: burlywood;
+        }
+
+        #box2 {
+            width: 50;
+            height: 50;
+            position: absolute;
+            background-color: darkcyan;
+        }
+    </style>
 </head>
 
 <body>
     <h2>Exercise13</h2>
+    <div id="box1">
+        <div id="box2">
+        </div>
+    </div>
+    <button onclick="myMove()"> Move Box</button>
+    <button onclick="myTop()"> Move Top</button>
 
 </body>
+<script>
+    function myMove() {
+        var b1 = document.getElementById("box2");
+        var pos = 0;
+        var mo = setInterval(frames, 5);
+        function frames() {
+            if (pos == 350) {
+                clearInterval(id);
+            } else {
+                pos++;
+                b1.style.top = pos + "px";
+                b1.style.left = pos + "px";
+            }
+        }
+    }
+    function myTop() {
+        var b1 = document.getElementById("box2");
+        var pos = 350;
+        var mo = setInterval(frames, 5);
+        function frames() {
+            if (pos == 0) {
+                clearInterval(id);
+            } else {
+                pos--;
+                b1.style.top = pos + "px";
+            }
+        }
+    }
+</script>
 
 </html>
