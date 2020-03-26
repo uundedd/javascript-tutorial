@@ -1,0 +1,34 @@
+<!-- Write by sa.mirkhalili -->
+<!-- sample for Event -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=50, initial-scale=1.0">
+    <title>Exercise15</title>
+</head>
+
+<body>
+    <h2>Exercise15</h2>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onmousedown="mDown(this)" onmouseup="mUp(this)"
+        style="background-color: brown; width: 150px; height: 25px; padding: 10px; color: rgb(245, 216, 206);">
+        Mouse Over Me!
+    </div>
+</body>
+<script>
+    function mOver(obj) {
+        obj.innerHTML = "Thank You!";
+    }
+    function mOut(obj) {
+        obj.innerHTML = "چرا رفتی !";
+    }
+    function mDown(obj) {
+        obj.style.width = "200px";
+    }
+    function mUp(obj) {
+        obj.style.width = "110px";
+        obj.style.backgroundColor = "rgb(12, 80, 67)";
+    }
+</script>
+
+</html>
