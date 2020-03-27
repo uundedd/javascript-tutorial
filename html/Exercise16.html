@@ -1,0 +1,39 @@
+<!-- Write by sa.mirkhalili -->
+<!-- sample for addEventListener -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=50, initial-scale=1.0">
+    <title>Exercise16</title>
+</head>
+
+<body>
+    <h2>Exercise16</h2>
+    <p></p>
+    <button id="mybt"> Click Me!</button>
+    <p id="demo"></p>
+</body>
+<script>
+    var x = document.getElementById("mybt");
+    x.addEventListener("mouseover", mOver);
+    x.addEventListener("mouseout", mOut);
+    x.addEventListener("click", mclick);
+    function mOver() {
+        document.getElementById("demo").innerHTML += "mouse Over! <br>";
+    }
+    function mOut() {
+        document.getElementById("demo").innerHTML += "mouse Out in button! <br>";
+    }
+    function mclick() {
+        document.getElementById("demo").innerHTML += "Click...! <br>";
+    }
+    window.addEventListener("resize", function () {
+        myWidth(window.innerWidth);
+    })
+    function myWidth(width) {
+        document.getElementById("demo").innerHTML = width;
+    }
+</script>
+
+</html>
