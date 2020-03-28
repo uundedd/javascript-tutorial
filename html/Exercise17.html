@@ -1,0 +1,35 @@
+<!-- Write by sa.mirkhalili -->
+<!-- sample for createElement -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=50, initial-scale=1.0">
+    <title>Exercise17</title>
+</head>
+
+<body>
+    <h2>Exercise17</h2>
+    <p></p>
+    <div id="div1">
+        <input type="text" id="intext">
+        <button onclick="inSer()">Inser Text</button>
+        <p id="pa1">This is one pharagraph.</p>
+        <p id="pa2">This is two pharagraph.</p>
+    </div>
+</body>
+<script>
+    function inSer() {
+        var inertext = document.getElementById("intext").value;
+        var para = document.createElement("p");
+        var node = document.createTextNode(inertext);
+        para.appendChild(node);
+        var element = document.getElementById("div1");
+        var child = document.getElementById("pa1");
+        element.insertBefore(para, child);
+        console.log(inertext);
+    }
+
+</script>
+
+</html>
